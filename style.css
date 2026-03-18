@@ -7,6 +7,7 @@ font-family:'Poppins', sans-serif;
 
 html{
 scroll-behavior:smooth;
+scroll-padding-top:80px;
 }
 
 body{
@@ -14,10 +15,19 @@ background:radial-gradient(circle at top right,#1f1147,#0f0f14);
 color:white;
 opacity:0;
 transition:1s;
+text-rendering:optimizeLegibility;
+-webkit-font-smoothing:antialiased;
 }
 
 body.loaded{
 opacity:1;
+}
+
+/* GLOBAL IMAGE OPTIMIZATION */
+img{
+max-width:100%;
+height:auto;
+display:block;
 }
 
 /* HEADER */
@@ -69,6 +79,12 @@ nav a:hover::after{
 width:100%;
 }
 
+/* ACCESSIBILITY */
+a:focus{
+outline:2px dashed #a855f7;
+outline-offset:4px;
+}
+
 /* HERO */
 
 .hero{
@@ -82,6 +98,12 @@ gap:60px;
 .hero-left h1{
 font-size:48px;
 margin-bottom:20px;
+}
+
+.hero-text{
+font-size:17px;
+line-height:1.7;
+color:#ddd;
 }
 
 .name2{
@@ -111,6 +133,8 @@ text-decoration:none;
 padding:10px 20px;
 border-radius:8px;
 transition:0.3s;
+font-weight:500;
+letter-spacing:0.5px;
 }
 
 .buttons a:hover{
@@ -182,6 +206,7 @@ padding:25px;
 border-radius:12px;
 width:280px;
 transition:0.3s;
+will-change:transform;
 }
 
 .edu-box:hover{
@@ -211,6 +236,7 @@ width:280px;
 cursor:pointer;
 transition:0.3s;
 border:1px solid rgba(255,255,255,0.08);
+will-change:transform;
 }
 
 .cert-box:hover{
@@ -240,6 +266,7 @@ background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:10px;
 transition:0.3s;
+will-change:transform;
 }
 
 .skill-card:hover{
@@ -267,6 +294,7 @@ border-radius:12px;
 overflow:hidden;
 transition:0.3s;
 position:relative;
+will-change:transform;
 }
 
 .project-card:hover{
@@ -285,7 +313,7 @@ color:#ccc;
 line-height:1.5;
 }
 
-/* SEO PROJECT TAG */
+/* SEO TAG */
 .project-card:last-child::before{
 content:"SEO Project";
 position:absolute;
@@ -311,6 +339,7 @@ border-radius:10px;
 width:100%;
 height:100%;
 object-fit:cover;
+border-radius:10px;
 }
 
 .overlay{
@@ -382,6 +411,7 @@ transform:translateY(0);
 /* MOBILE */
 
 @media (max-width:768px){
+
 .hero{
 flex-direction:column;
 text-align:center;
@@ -396,4 +426,13 @@ width:160px;
 height:160px;
 margin-top:20px;
 }
+
+.project-card p{
+font-size:13px;
+}
+
+.buttons{
+justify-content:center;
+}
+
 }
